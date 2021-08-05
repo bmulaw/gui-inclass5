@@ -3,7 +3,11 @@ var page = document.getElementById('page');
 page.innerHTML += "<li class='cool' id='six'> cream </li>";
 
 // ADD NEW ITEM START OF LIST
-page.innerHTML = "<li class='cool' id='five'> kale </li>" + page.innerHTML;
+// source: https://www.w3schools.com/jsref/met_node_insertbefore.asp
+var firstItem = document.createElement("li");
+var kale = document.createTextNode("kale");
+firstItem.appendChild(kale);                   
+page.insertBefore(firstItem, page.childNodes[4]);
 
 // ADD A CLASS OF COOL TO ALL LIST ITEMS
 // https://www.w3schools.com/jsref/prop_html_classname.asp
